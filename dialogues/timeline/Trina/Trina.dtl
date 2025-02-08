@@ -1,0 +1,112 @@
+if {dialogue.cut_scene} == true:
+	label trina  0<x<1
+	if {dialogue.trina} == 0:
+		[signal arg="timeline_start"]
+		join Trina (interest) center
+		Trina (interest): Ты видела это? Видела? Оно только что пролетело! Такое оранжево-черное! Интересно, что это было?
+		Nepta: Да! Я видела. А ты не видела темно-синие карты?
+		Trina (think): Темно-синие карты? Хммм, такие?
+		Nepta: Да! Да, они. Можешь отдать их? Они разлетелись из-за этой черной штуки.
+		Trina (confused): Хммм... Ну если разгадаешь мои загадки, хе-хе.
+		Nepta: Давай.
+		label zagadka1
+		Trina (happy): Я дом для миллиардов светил,  \
+		В бескрайние дали меня унесло.  \
+		Вокруг меня звезды, как в сказке,  \
+		Что я за чудо, скажи, не зная?
+		- Галактика
+			Trina (interest): О, ты ответила правильно, молодец!
+			[signal arg="card_13"]
+			set {count_card} += 1
+			set {dialogue.trina} = 1
+			[signal arg="timeline_end"]
+		- Созвездие
+			label -1z
+			Trina (sad): Неправильно, подумай ещё раз. У тебя всё получится!
+			set {dialogue.trina} = 0.1
+			[signal arg="timeline_end"]
+			[signal arg="timeline_end"]
+		- Звёздное скопление
+			jump -1z
+		- Ответить потом
+			Nepta: Прости, сейчас не смогу дать ответа. Приду позже.
+			Trina (interest): Хорошо, жду не дождусь!
+			set {dialogue.trina} = 0.1
+			[signal arg="timeline_end"]
+		[signal arg="timeline_end"]
+		[end_timeline]
+	elif {dialogue.trina} == 0.1:
+		[signal arg="timeline_start"]
+		join Trina (happy) center
+		jump zagadka1
+	label trina 1<x<2
+	elif {dialogue.trina} == 1:
+		[signal arg="timeline_start"]
+		join Trina (interest) center
+		Trina (interest): Готова к следующей загадке?
+		Nepta: Да.
+		Trina (think): Я звезда, но не обычная,\
+		Сильно вращаюсь, излучая свет.  \
+		Мои импульсы — как ритм сердца,  \
+		Кто я, скажи, в небесном свете?
+		- Звезда
+			label -2z
+			Trina (angry): Неправильно!
+			[signal arg="timeline_end"]
+		- Пульсар
+			Trina (happy): Да! Это правильный ответ!
+			set {dialogue.trina} = 2
+			set {count_card} += 1
+			[signal arg="card_21"]
+			[signal arg="timeline_end"]
+		- Блазар
+			jump -2z
+		- Ответить потом
+			Trina: Хм, хорошо, буду ждать тебя!
+			[signal arg="timeline_end"]
+		[end_timeline]
+	label trina 2<x<3
+	elif {dialogue.trina} == 2:
+		[signal arg="timeline_start"]
+		join Trina (think) center
+		Trina (think): Что бы ещё тебе загадать, хммм...
+		Trina (angry): Значит, слушай.
+		label zagadka3
+		Trina (interest): Я сила, что притягивает всё,  \
+		Без меня не было бы ни звёзд, ни небес.  \
+		Я держу планеты на орбите,  \
+		Что я за закон, что в мире правит?
+		- Гравитация
+			Trina (happy): Это правильный ответ! Молодец, ты отгадала все загадки!
+			[signal arg="card_24"]
+			set {count_card} += 1
+			set {dialogue.trina} = 3
+			[signal arg="timeline_end"]
+		- Космос
+			label -3z
+			Trina (think): Неправильно, подумай ещё.
+			set {dialogue.trina} = 2.1
+			[signal arg="timeline_end"]
+		- Невидимые нити
+			jump -3z
+		- Ответить потом
+			Trina (happy): Буду ждать тебя!
+			set {dialogue.trina} = 2.1
+			[signal arg="timeline_end"]
+		[end_timeline]
+	elif {dialogue.trina} == 2.1:
+		join Trina (interest) center
+		[signal arg="timeline_start"]
+		jump zagadka3
+else:
+	[signal arg="timeline_start"]
+	join Trina (happy) center
+	Trina (happy): Мне так нравится стоять в начале дороги! У меня так много невысказанных мыслей и столько идей для монологов. Казалось бы, из меня прямо сейчас единым потоком начнут выходить разные истории.
+	Nepta: Привет! Я так рада тебя увидеть спустя всё это время. Тебе есть, о чем мне рассказать?
+	Trina (sad): Нет, у меня нет ни единой мысли в голове...
+	set {dialogue.trina} = 0.1
+	Trina (angry): Почему ты решила спросить меня сейчас?!
+	Nepta: ...
+	Trina (think): Ходят слухи, что с минуты на минуту здесь произойдет катастрофа. Тебе действительно стоит бежать куда подальше, если не хочешь завязть в странном беспорядке.
+	Nepta: "Наверное, мне стоит оставить ее в покое"
+	[signal arg="timeline_end"]

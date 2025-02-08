@@ -1,0 +1,57 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.pepeta} == 0:
+		[signal arg="timeline_start"]
+		join pepeta (sad) center
+		Nepta: Мои карты... Я так долго над ними работала...
+		Nepta: «Бедная Пепета, надо ей помочь.»
+		- Согласиться помочь.
+			label +
+			Nepta: Давай я помогу собрать твои карты? Они не должны были далеко улететь.
+			pepeta (confused): Правда? Ты правда мне поможешь?
+			Nepta: Конечно.
+			pepeta (happy): Спасибо тебе огромное!
+			leave pepeta [animation="Slide Out Left"]
+			[wait time="2.0"]
+			Nepta: "С чего бы начать?"
+			Nepta: "Наверное, с того, что стоит спросить, сколько всего карт надо найти"
+			Nepta: Мм, можешь сказать, сколько у тебя было карт?
+			join pepeta (happy) center
+			pepeta (happy): Да, конечно, их было 24.
+			Nepta: Спасибо!
+			set {dialogue.pepeta} = -0.2
+		- Отказаться.
+			Nepta: Нет, я должна ей помочь, она же мой друг.
+			jump +
+		[signal arg="timeline_end"]
+	elif {count_card} != 24:
+		[signal arg="timeline_start"]
+		join pepeta (confused) center
+		pepeta (confused): Ты уже собрала все карты?
+		Nepta: Ещё нет.
+		[signal arg="timeline_end"]
+	elif {count_card} == 24:
+		[signal arg="timeline_start"]
+		join pepeta (confused) center
+		pepeta (happy): Привет, Непта!
+		Nepta: Я собрала все карты!
+		pepeta (happy): Вау, ты действительно это сделала!
+		pepeta (sad): Не знаю даже, как тебя отблагодарить...
+		Nepta: Не переживай насчёт этого.
+		pepeta (happy): Правда, огромное спасибо, Непта, я бы без тебя не справилась!
+		Nepta: Я думаю отправиться в путешествие, чтобы найти и изучить, что это было.
+		pepeta (sad): Оу, хорошо... Удачи тебе!
+		Nepta: Я буду скучать!
+		pepeta (happy): Я тоже!
+		[signal arg="cut_scene2"]
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join pepeta (happy) center
+	pepeta (happy): Непта, привет, давно не виделись!
+	pepeta (happy): Пока ты меня догоняла, я рассортировала все полученные нами сведения и
+	pepeta (think): Всё-таки
+	pepeta (happy): Завершила его создание!!
+	pepeta (interest): И теперь я могу похвастаться им перед тобой!
+	Nepta: Вау! Он действительно очень кла-
+	[signal arg="timeline_end"]
+	[signal arg="cut_scene"]

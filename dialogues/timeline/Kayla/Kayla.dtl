@@ -1,0 +1,76 @@
+if {dialogue.cut_scene} == true:
+	label <1
+	if {dialogue.kayla} == 0:
+		[signal arg="timeline_start"]
+		join Kayla (think) center
+		Kayla (think): Привет, Непта. Что-то хотела?
+		Nepta: И тебе привет! Хотела спросить, не видела ли ты карты.
+		Kayla (interest): Да, видела. Они тебе нужны?
+		Nepta: Да. Вернёшь?
+		Kayla (sad): Я не уверена, что это твои карты... Вдруг они принадлежат кому-то другому, а я так просто их отдам...
+		Kayla (angry): ...
+		Kayla (sad): Давай так\: я загадываю тебе загадку, и если ты разгадаешь, я тебе её отдам?
+		Nepta: Хорошо, я попробую их разгадать.
+		Kayla (happy): Я, правда, не совсем уверена, что смогу правильно придумать загадку... Но я попытаюсь! У Трины ведь хорошо получается.
+		set {dialogue.kayla} = 0.1
+		label zagadka1
+		Kayla (sad): Я верный друг планеты своей,  \
+Кружу вокруг, как в танце, скорей.  \
+Я могу быть большим или малым,  \
+Кто я, скажи, в этом мире безжалостном?
+		- Спутник
+			Kayla (happy): Ох, это правильный ответ. Кажется, это действительно твоя карточка. Держи.
+			set {count_card} += 1
+			set {dialogue.kayla} = 1
+			[signal arg="card_16"]
+			[signal arg="timeline_end"]
+		- Астероид
+			label -1z
+			Kayla (angry): ...
+			Kayla: Неправильно. Но, думаю, тебе стоит попытаться ещё раз. Я не совсем хороша в загадках, хах...
+			[signal arg="timeline_end"]
+		- Метеор
+			jump -1z
+		- Ответить потом
+			Kayla: Хм, хоршо, буду ждать тебя...
+			[signal arg="timeline_end"]
+		[signal arg="timeline_end"]
+	elif {dialogue.kayla} == 0.1:
+		[signal arg="timeline_start"]
+		join Kayla (sad) center
+		jump zagadka1
+	elif {dialogue.kayla} == 1:
+		label 1<x<2
+		[signal arg="timeline_start"]
+		join Kayla (happy) center
+		Kayla (happy): Вторая загадка?
+		Nepta: Да, давай.
+		label zagadka2
+		Kayla (sad): Я из льда и пыли,  \
+Приближаясь к светилу, я сверкаю в мгле.  \
+У меня хвост, как у сказки,  \
+Кто я, скажи, в этом космическом танце?
+		- Звезда
+			label -2z
+			Kayla (angry): Неправильно... Попробуй ещё раз.
+			[signal arg="timeline_end"]
+		- Астероид
+			jump -2z
+		- Комета
+			Kayla (interest): Правильный ответ. Выходит, вторая карта тоже твоя...
+			set {count_card} += 1
+			set {dialogue.kayla} = 2
+			[signal arg="card_18"]
+			[signal arg="timeline_end"]
+		- Ответить потом
+			[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	Kayla (happy): Привет! Рада тебя видеть.
+	Nepta: Я тоже! Надеюсь, что у тебя все хорошо.
+	Kayla (sad): Нет, ты же знаешь как тут у нас все обычно.
+	Kayla (angry): Практически ничего не меняется, да и соседей мало волнует благополучие остальных. Не знаю, как бы мы без тебя были.
+	Nepta: Ты преувеличиваешь.
+	Nepta: Прости, но мне, наверное, стоит идти, я не хочу заставлять Пепету ждать.
+	Kayla (happy): Хорошо, мне не жаль. У нас есть еще куча времени, если мы захотим провести его друг с другом.
+	[signal arg="timeline_end"]

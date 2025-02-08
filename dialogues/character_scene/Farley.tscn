@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ndcskgpg3126"]
+
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_525f6"]
+[ext_resource type="Script" path="res://npc/farley.gd" id="1_sc8nn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7tn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41hpj"]
+radius = 75.6637
+
+[node name="Farley" type="StaticBody2D"]
+position = Vector2(472, 362)
+script = ExtResource("1_sc8nn")
+
+[node name="stars_1" parent="." instance=ExtResource("1_525f6")]
+rotation = 0.135214
+animation = &"blue"
+autoplay = "blue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sm7tn")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_41hpj")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

@@ -1,0 +1,747 @@
+[gd_scene load_steps=77 format=3 uid="uid://ce3r757k5g1l0"]
+
+[ext_resource type="Script" path="res://player/inventory/inventory.gd" id="1_n5aa1"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_1.gd" id="5_gu1j4"]
+[ext_resource type="Texture2D" uid="uid://bj4d7awgcl1rh" path="res://art/inventory/card_bg/2.png" id="6_b0w2r"]
+[ext_resource type="Script" path="res://player/inventory/card_big_gd_area/card_bigg_1.gd" id="6_f207r"]
+[ext_resource type="Texture2D" uid="uid://bcfsbk1juvbjk" path="res://art/inventory/bg/инвентарь.png" id="6_lwokc"]
+[ext_resource type="Texture2D" uid="uid://bdpk7t04vjqes" path="res://art/inventory/card_bg/1.png" id="7_pn441"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_2.gd" id="7_v7dl4"]
+[ext_resource type="Script" path="res://player/inventory/bg.gd" id="7_w2ifl"]
+[ext_resource type="Texture2D" uid="uid://ct5xcfvc177qd" path="res://art/inventory/card_bg/3.png" id="7_y2wtj"]
+[ext_resource type="Texture2D" uid="uid://u4f187ew7rbl" path="res://art/inventory/card_bg/4.png" id="8_vnlqo"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_3.gd" id="9_6utw2"]
+[ext_resource type="Texture2D" uid="uid://cde27m7sen6b3" path="res://art/inventory/card_bg/5.png" id="9_tmid1"]
+[ext_resource type="Texture2D" uid="uid://ya8vhwkv6rb4" path="res://art/inventory/card_bg/6.png" id="10_11kfu"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_4.gd" id="11_ai6dv"]
+[ext_resource type="Texture2D" uid="uid://de3jdfp0awb86" path="res://art/inventory/card_bg/7.png" id="11_jd6kc"]
+[ext_resource type="Texture2D" uid="uid://c1yls6rlxp18h" path="res://art/inventory/card_bg/8.png" id="12_caayo"]
+[ext_resource type="Texture2D" uid="uid://b0yx068owj651" path="res://art/inventory/card_bg/9.png" id="13_f1h60"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_5.gd" id="13_uu41n"]
+[ext_resource type="Texture2D" uid="uid://dpraxcytokcln" path="res://art/inventory/card_bg/10.png" id="14_xvvtt"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_6.gd" id="15_767ad"]
+[ext_resource type="Texture2D" uid="uid://cbadvvp1t5s2s" path="res://art/inventory/card_bg/11.png" id="15_gcv0t"]
+[ext_resource type="Texture2D" uid="uid://cssfj845fsibt" path="res://art/inventory/card_bg/12.png" id="16_c4tkr"]
+[ext_resource type="Texture2D" uid="uid://bccti3fbyjor" path="res://art/inventory/card_bg/13.png" id="17_h3604"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_7.gd" id="17_th2ak"]
+[ext_resource type="Texture2D" uid="uid://comk6lmorba31" path="res://art/inventory/card_bg/14.png" id="18_enwnl"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_8.gd" id="19_hu7qw"]
+[ext_resource type="Texture2D" uid="uid://drs2jn5i7w2fo" path="res://art/inventory/card_bg/15.png" id="19_ncykr"]
+[ext_resource type="Texture2D" uid="uid://b0ma6nt5rxlsn" path="res://art/inventory/card_bg/16.png" id="20_bxhwa"]
+[ext_resource type="Texture2D" uid="uid://g08mpxna1a00" path="res://art/inventory/card_bg/17.png" id="21_2p6k0"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_9.gd" id="21_m75n3"]
+[ext_resource type="Texture2D" uid="uid://csyjeg41pbwxn" path="res://art/inventory/card_bg/18.png" id="22_2w6lc"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_10.gd" id="23_vpefc"]
+[ext_resource type="Texture2D" uid="uid://ntj8h4uoc8mr" path="res://art/inventory/card_bg/19.png" id="23_w70g6"]
+[ext_resource type="Texture2D" uid="uid://cq04bk4nykfay" path="res://art/inventory/card_bg/20.png" id="24_ws5uu"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_11.gd" id="25_bkrnt"]
+[ext_resource type="Texture2D" uid="uid://dkj6btm5g0qo8" path="res://art/inventory/card_bg/21.png" id="25_cxeyq"]
+[ext_resource type="Texture2D" uid="uid://hdpjay5gjda7" path="res://art/inventory/card_bg/22.png" id="26_ngwnc"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_12.gd" id="27_bsc4e"]
+[ext_resource type="Texture2D" uid="uid://dbgsthuxrmwws" path="res://art/inventory/card_bg/23.png" id="27_tbwh4"]
+[ext_resource type="Texture2D" uid="uid://dfque303dhmqq" path="res://art/inventory/card_bg/24.png" id="28_x2fyy"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_13.gd" id="29_y3ukr"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_14.gd" id="31_31j4t"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_15.gd" id="33_ks4ma"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_16.gd" id="35_gno4k"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_17.gd" id="37_6se20"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_18.gd" id="39_5drp8"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_19.gd" id="41_tpwvb"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_20.gd" id="43_l7o3f"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_21.gd" id="45_athem"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_22.gd" id="47_rj4gi"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_23.gd" id="49_3ngom"]
+[ext_resource type="Script" path="res://player/inventory/card_mini_gd/card_24.gd" id="51_0lskf"]
+[ext_resource type="Texture2D" uid="uid://dog3xhjildsmd" path="res://art/inventory/card/1.png" id="52_cu2w0"]
+[ext_resource type="Texture2D" uid="uid://cy3ccv8yhqqjx" path="res://art/inventory/card/2.png" id="54_yw802"]
+[ext_resource type="Texture2D" uid="uid://lq7u22gqj01j" path="res://art/inventory/card/3.png" id="55_8oskb"]
+[ext_resource type="Texture2D" uid="uid://bb3oihwb3qiqf" path="res://art/inventory/card/5.png" id="56_1oe2m"]
+[ext_resource type="Texture2D" uid="uid://cqvhkmglfkuua" path="res://art/inventory/card/4.png" id="56_p6at6"]
+[ext_resource type="Texture2D" uid="uid://bj0eeion44kq0" path="res://art/inventory/card/6.png" id="58_7fhmq"]
+[ext_resource type="Texture2D" uid="uid://daxkh1nddvh10" path="res://art/inventory/card/7.png" id="59_011uj"]
+[ext_resource type="Texture2D" uid="uid://bf4d6q7sahv5j" path="res://art/inventory/card/8.png" id="60_aajhu"]
+[ext_resource type="Texture2D" uid="uid://dhym1sjey38a7" path="res://art/inventory/card/9.png" id="61_4ddsi"]
+[ext_resource type="Texture2D" uid="uid://ejp3b5bkrfek" path="res://art/inventory/card/10.png" id="62_618q7"]
+[ext_resource type="Texture2D" uid="uid://cyvg28hn8cjoh" path="res://art/inventory/card/11.png" id="63_4rhf6"]
+[ext_resource type="Texture2D" uid="uid://c4bq2137lk4v3" path="res://art/inventory/card/12.png" id="64_oqcgh"]
+[ext_resource type="Texture2D" uid="uid://d3gfbrqkbhc4t" path="res://art/inventory/card/13.png" id="65_gbi2w"]
+[ext_resource type="Texture2D" uid="uid://dllt52u83bs87" path="res://art/inventory/card/14.png" id="66_ev7gv"]
+[ext_resource type="Texture2D" uid="uid://c0qvxrjykduln" path="res://art/inventory/card/15.png" id="67_do8aj"]
+[ext_resource type="Texture2D" uid="uid://ctcu1kc7cjixh" path="res://art/inventory/card/16.png" id="68_6v5wl"]
+[ext_resource type="Texture2D" uid="uid://fi47i58s1yqx" path="res://art/inventory/card/17.png" id="69_0s4wo"]
+[ext_resource type="Texture2D" uid="uid://bpxqni2yw7qwv" path="res://art/inventory/card/18.png" id="70_vx4up"]
+[ext_resource type="Texture2D" uid="uid://cre12w2f2321n" path="res://art/inventory/card/19.png" id="71_73gmy"]
+[ext_resource type="Texture2D" uid="uid://bdvhblu3p88qx" path="res://art/inventory/card/20.png" id="72_rxydg"]
+[ext_resource type="Texture2D" uid="uid://150yv00y0vo6" path="res://art/inventory/card/21.png" id="73_vreyo"]
+[ext_resource type="Texture2D" uid="uid://csbyosr7qkvhx" path="res://art/inventory/card/22.png" id="74_dmtpb"]
+[ext_resource type="Texture2D" uid="uid://e8qgcvc6tcta" path="res://art/inventory/card/23.png" id="75_5b3qi"]
+[ext_resource type="Texture2D" uid="uid://ccihg8xypb3ca" path="res://art/inventory/card/24.png" id="76_nd580"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n5aa1")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(566, 314)
+texture = ExtResource("6_lwokc")
+script = ExtResource("7_w2ifl")
+
+[node name="card_1" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-282, -110)
+texture = ExtResource("7_pn441")
+script = ExtResource("5_gu1j4")
+
+[node name="Button" type="Button" parent="bg/card_1"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_2" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-202, -110)
+texture = ExtResource("6_b0w2r")
+script = ExtResource("7_v7dl4")
+
+[node name="Button" type="Button" parent="bg/card_2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_3" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-120, -110)
+texture = ExtResource("7_y2wtj")
+script = ExtResource("9_6utw2")
+
+[node name="Button" type="Button" parent="bg/card_3"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_4" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-39, -110)
+texture = ExtResource("8_vnlqo")
+script = ExtResource("11_ai6dv")
+
+[node name="Button" type="Button" parent="bg/card_4"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_5" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(42, -110)
+texture = ExtResource("9_tmid1")
+script = ExtResource("13_uu41n")
+
+[node name="Button" type="Button" parent="bg/card_5"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_6" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(121, -110)
+texture = ExtResource("10_11kfu")
+script = ExtResource("15_767ad")
+
+[node name="Button" type="Button" parent="bg/card_6"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_7" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(202, -110)
+texture = ExtResource("11_jd6kc")
+script = ExtResource("17_th2ak")
+
+[node name="Button" type="Button" parent="bg/card_7"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_8" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(282, -110)
+texture = ExtResource("12_caayo")
+script = ExtResource("19_hu7qw")
+
+[node name="Button" type="Button" parent="bg/card_8"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_9" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-282, 1)
+texture = ExtResource("13_f1h60")
+script = ExtResource("21_m75n3")
+
+[node name="Button" type="Button" parent="bg/card_9"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_10" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-202, 1)
+texture = ExtResource("14_xvvtt")
+script = ExtResource("23_vpefc")
+
+[node name="Button" type="Button" parent="bg/card_10"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_11" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-120, 1)
+texture = ExtResource("15_gcv0t")
+script = ExtResource("25_bkrnt")
+
+[node name="Button" type="Button" parent="bg/card_11"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_12" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-39, 1)
+texture = ExtResource("16_c4tkr")
+script = ExtResource("27_bsc4e")
+
+[node name="Button" type="Button" parent="bg/card_12"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_13" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(42, 1)
+texture = ExtResource("17_h3604")
+script = ExtResource("29_y3ukr")
+
+[node name="Button" type="Button" parent="bg/card_13"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_14" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(122, 1)
+texture = ExtResource("18_enwnl")
+script = ExtResource("31_31j4t")
+
+[node name="Button" type="Button" parent="bg/card_14"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_15" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(202, 1)
+texture = ExtResource("19_ncykr")
+script = ExtResource("33_ks4ma")
+
+[node name="Button" type="Button" parent="bg/card_15"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_16" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(282, 1)
+texture = ExtResource("20_bxhwa")
+script = ExtResource("35_gno4k")
+
+[node name="Button" type="Button" parent="bg/card_16"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_17" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-282, 112)
+texture = ExtResource("21_2p6k0")
+script = ExtResource("37_6se20")
+
+[node name="Button" type="Button" parent="bg/card_17"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_18" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-202, 112)
+texture = ExtResource("22_2w6lc")
+script = ExtResource("39_5drp8")
+
+[node name="Button" type="Button" parent="bg/card_18"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_19" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-120, 112)
+texture = ExtResource("23_w70g6")
+script = ExtResource("41_tpwvb")
+
+[node name="Button" type="Button" parent="bg/card_19"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_20" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(-39, 112)
+texture = ExtResource("24_ws5uu")
+script = ExtResource("43_l7o3f")
+
+[node name="Button" type="Button" parent="bg/card_20"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_21" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(42, 112)
+texture = ExtResource("25_cxeyq")
+script = ExtResource("45_athem")
+
+[node name="Button" type="Button" parent="bg/card_21"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_22" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(122, 112)
+texture = ExtResource("26_ngwnc")
+script = ExtResource("47_rj4gi")
+
+[node name="Button" type="Button" parent="bg/card_22"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_23" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(202, 112)
+texture = ExtResource("27_tbwh4")
+script = ExtResource("49_3ngom")
+
+[node name="Button" type="Button" parent="bg/card_23"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="card_24" type="Sprite2D" parent="bg"]
+visible = false
+position = Vector2(282, 112)
+texture = ExtResource("28_x2fyy")
+script = ExtResource("51_0lskf")
+
+[node name="Button" type="Button" parent="bg/card_24"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = 48.0
+
+[node name="not_bg" type="Sprite2D" parent="."]
+position = Vector2(566, 314)
+
+[node name="card_bigg_1" type="Sprite2D" parent="not_bg"]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("52_cu2w0")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_1"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -516.0
+offset_top = -286.0
+offset_right = 534.0
+offset_bottom = 301.0
+
+[node name="card_bigg_2" type="Sprite2D" parent="not_bg"]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("54_yw802")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -516.0
+offset_top = -285.0
+offset_right = 534.0
+offset_bottom = 304.0
+
+[node name="card_bigg_3" type="Sprite2D" parent="not_bg"]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("55_8oskb")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_3"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -515.0
+offset_top = -289.0
+offset_right = 535.0
+offset_bottom = 302.0
+
+[node name="card_bigg_4" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("56_p6at6")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_4"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -315.0
+offset_right = 591.0
+offset_bottom = 337.0
+
+[node name="card_bigg_5" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("56_1oe2m")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_5"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -567.0
+offset_top = -314.0
+offset_right = 584.0
+offset_bottom = 334.0
+
+[node name="card_bigg_6" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("58_7fhmq")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_6"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -568.0
+offset_top = -315.0
+offset_right = 591.0
+offset_bottom = 334.0
+
+[node name="card_bigg_7" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("59_011uj")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_7"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -316.0
+offset_right = 589.0
+offset_bottom = 335.0
+
+[node name="card_bigg_8" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("60_aajhu")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_8"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -566.0
+offset_top = -315.0
+offset_right = 589.0
+offset_bottom = 337.0
+
+[node name="card_bigg_9" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("61_4ddsi")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_9"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -319.0
+offset_right = 587.0
+offset_bottom = 338.0
+
+[node name="card_bigg_10" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("62_618q7")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_10"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -570.0
+offset_top = -320.0
+offset_right = 593.0
+offset_bottom = 342.0
+
+[node name="card_bigg_11" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("63_4rhf6")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_11"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -320.0
+offset_right = 592.0
+offset_bottom = 338.0
+
+[node name="card_bigg_12" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("64_oqcgh")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_12"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -320.0
+offset_right = 593.0
+offset_bottom = 338.0
+
+[node name="card_bigg_13" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("65_gbi2w")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_13"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -319.0
+offset_right = 593.0
+offset_bottom = 343.0
+
+[node name="card_bigg_14" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("66_ev7gv")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_14"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -571.0
+offset_top = -321.0
+offset_right = 591.0
+offset_bottom = 342.0
+
+[node name="card_bigg_15" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("67_do8aj")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_15"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -570.0
+offset_top = -318.0
+offset_right = 591.0
+offset_bottom = 339.0
+
+[node name="card_bigg_16" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("68_6v5wl")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_16"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -318.0
+offset_right = 591.0
+offset_bottom = 339.0
+
+[node name="card_bigg_17" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("69_0s4wo")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_17"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -570.0
+offset_top = -319.0
+offset_right = 590.0
+offset_bottom = 338.0
+
+[node name="card_bigg_18" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("70_vx4up")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_18"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -320.0
+offset_right = 589.0
+offset_bottom = 339.0
+
+[node name="card_bigg_19" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("71_73gmy")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_19"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -570.0
+offset_top = -316.0
+offset_right = 589.0
+offset_bottom = 338.0
+
+[node name="card_bigg_20" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("72_rxydg")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_20"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -572.0
+offset_top = -319.0
+offset_right = 592.0
+offset_bottom = 339.0
+
+[node name="card_bigg_21" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("73_vreyo")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_21"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -319.0
+offset_right = 588.0
+offset_bottom = 338.0
+
+[node name="card_bigg_22" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("74_dmtpb")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_22"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -316.0
+offset_right = 589.0
+offset_bottom = 337.0
+
+[node name="card_bigg_23" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("75_5b3qi")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_23"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -569.0
+offset_top = -316.0
+offset_right = 588.0
+offset_bottom = 339.0
+
+[node name="card_bigg_24" type="Sprite2D" parent="not_bg"]
+visible = false
+texture = ExtResource("76_nd580")
+script = ExtResource("6_f207r")
+
+[node name="Button" type="Button" parent="not_bg/card_bigg_24"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -568.0
+offset_top = -316.0
+offset_right = 588.0
+offset_bottom = 337.0
+
+[connection signal="pressed" from="bg/card_1/Button" to="bg/card_1" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_2/Button" to="bg/card_2" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_3/Button" to="bg/card_3" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_4/Button" to="bg/card_4" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_5/Button" to="bg/card_5" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_6/Button" to="bg/card_6" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_7/Button" to="bg/card_7" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_8/Button" to="bg/card_8" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_9/Button" to="bg/card_9" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_10/Button" to="bg/card_10" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_11/Button" to="bg/card_11" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_12/Button" to="bg/card_12" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_13/Button" to="bg/card_13" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_14/Button" to="bg/card_14" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_15/Button" to="bg/card_15" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_16/Button" to="bg/card_16" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_17/Button" to="bg/card_17" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_18/Button" to="bg/card_18" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_19/Button" to="bg/card_19" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_20/Button" to="bg/card_20" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_21/Button" to="bg/card_21" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_22/Button" to="bg/card_22" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_23/Button" to="bg/card_23" method="_on_button_pressed"]
+[connection signal="pressed" from="bg/card_24/Button" to="bg/card_24" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_1/Button" to="not_bg/card_bigg_1" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_2/Button" to="not_bg/card_bigg_2" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_3/Button" to="not_bg/card_bigg_3" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_4/Button" to="not_bg/card_bigg_4" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_5/Button" to="not_bg/card_bigg_5" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_6/Button" to="not_bg/card_bigg_6" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_7/Button" to="not_bg/card_bigg_7" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_8/Button" to="not_bg/card_bigg_8" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_9/Button" to="not_bg/card_bigg_9" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_10/Button" to="not_bg/card_bigg_10" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_11/Button" to="not_bg/card_bigg_11" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_12/Button" to="not_bg/card_bigg_12" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_13/Button" to="not_bg/card_bigg_13" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_14/Button" to="not_bg/card_bigg_14" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_15/Button" to="not_bg/card_bigg_15" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_16/Button" to="not_bg/card_bigg_16" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_17/Button" to="not_bg/card_bigg_17" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_18/Button" to="not_bg/card_bigg_18" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_19/Button" to="not_bg/card_bigg_19" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_20/Button" to="not_bg/card_bigg_20" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_21/Button" to="not_bg/card_bigg_21" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_22/Button" to="not_bg/card_bigg_22" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_23/Button" to="not_bg/card_bigg_23" method="_on_button_pressed"]
+[connection signal="pressed" from="not_bg/card_bigg_24/Button" to="not_bg/card_bigg_24" method="_on_button_pressed"]

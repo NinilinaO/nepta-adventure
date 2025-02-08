@@ -1,0 +1,77 @@
+if {dialogue.cut_scene} == true:
+	label <1
+	if {dialogue.mid} == 0:
+		[signal arg="timeline_start"]
+		join Mid (think) center
+		Mid (think): Снова здравствуй, Непта!
+		Mid: Что привело тебя ко мне?
+		Nepta: Здравствуйте, вы случайно не видели маленькие тёмно-синие карточки?
+		Mid (interest): Тёмно-синие карточки... Ох, да, есть у меня парочка.
+		Nepta: Можете их вернуть? Они случайно разлетелись.
+		Mid (happy): Хм... Если разгадаешь мои загадки, звёздочка.
+		Nepta: Конечно, люблю загадки.
+		label zagadka1
+		set {dialogue.mid} = 0.1
+		Mid (happy): Я горю в ночи, как яркий огонь,\
+		Внутри меня ядерный процесс — мой закон.\
+		Я светил, что дарит тепло,\
+		Кто я, скажи, в этом светлом кругу?
+		- Блазар
+			label -1z
+			Mid (confused): Ох, это неправильный ответ. Попробуй ещё раз, я уверена\: у тебя всё получится.
+			[signal arg="timeline_end"]
+		- Комета
+			jump -1z
+		- Звезда
+			Mid (think): Это правильный ответ, молодец!
+			set {count_card} += 1
+			set {dialogue.mid} = 1
+			[signal arg="card_14"]
+			[signal arg="timeline_end"]
+		- Ответить потом
+			Mid (sad): Хорошо, я буду ждать тебя!
+			[signal arg="timeline_end"]
+		[signal arg="timeline_end"]
+	elif {dialogue.mid} == 0.1:
+		[signal arg="timeline_start"]
+		join Mid (happy) center
+		jump zagadka1
+	elif {dialogue.mid} == 1:
+		[signal arg="timeline_start"]
+		join Mid (think) center
+		Mid: Последняя загадка?
+		Nepta: Давайте.
+		label zadadka2
+		Mid (think): Я круглая, но не мяч,  \
+		Вокруг звезды я делаю скач.  \
+		На мне жизнь может процветать,  \
+		Что я за тело, можешь угадать?
+		- Звезда
+			label -2z
+			Mid (sad): Хм, нет, неправильно... Попробуй ещё раз.
+			set {dialogue.mid} = 1.1
+			[signal arg="timeline_end"]
+		- Планета
+			Mid (happy): Ответ правильный.
+			[signal arg="card_15"]
+			set {count_card} += 1
+			set {dialogue.mid} = 2
+			[signal arg="timeline_end"]
+		- Астероид
+			jump -2z
+		- Ответить потом
+			Mid (sad): Буду ждать!
+			[signal arg="timeline_end"]
+	elif {dialogue.mid} == 1.1:
+		[signal arg="timeline_start"]
+		join Mid (think) center
+		jump zadadka2
+else:
+	[signal arg="timeline_start"]
+	join Mid (think) center
+	Mid (think): Здравствуй! Рада тебя видеть.
+	Nepta: Здравствуйте! Я не хочу здесь задерживаться, поэтому просто пойду дальше, хорошо?
+	Mid (interest): Смогу ли я тебя остановить, даже если попытаюсь?
+	Mid (think): Ты достаточно молода, тебе свойственно любопытство.
+	Mid (think): Ступай своей дорогой, судьба укажет тебе путь.
+	[signal arg="timeline_end"]

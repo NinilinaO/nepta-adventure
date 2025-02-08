@@ -1,0 +1,21 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.wilf} == 0:
+		[signal arg="timeline_start"]
+		join Wilf (interest) center
+		Wilf (interest): Хммм, привет, Непта! Ты пришла помочь мне с моей задачей?
+		Nepta: Нет, я пришла спросить насчёт карт. У тебя их случайно нет?
+		Wilf (confused): Есть одна. Она тебе нужна?
+		Nepta: Да, вернёшь?
+		Wilf: Конечно.
+		set {count_card} += 1
+		[signal arg="card_11"]
+		set {dialogue.wilf} = 1
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Wilf (confused) center
+	Wilf (confused): Привет! У тебя есть несколько свободных минут?
+	Wilf (interest): Мне нужна помощь с одной задачей, способ решения которой я не знаю.
+	Nepta: Нет, не сейчас, извини.
+	Nepta: Но я подойду к тебе, когда у меня будет свободное время.
+	[signal arg="timeline_end"]

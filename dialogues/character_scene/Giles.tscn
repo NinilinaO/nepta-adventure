@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmi124stonttk"]
+
+[ext_resource type="Script" path="res://npc/giles.gd" id="1_hsfjl"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_so3cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqmp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sr8pv"]
+radius = 75.6637
+
+[node name="Giles" type="StaticBody2D"]
+position = Vector2(402, -28)
+script = ExtResource("1_hsfjl")
+
+[node name="stars_1" parent="." instance=ExtResource("1_so3cv")]
+rotation = -0.131701
+scale = Vector2(0.8, 0.8)
+animation = &"purple"
+autoplay = "purple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pvqmp")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_sr8pv")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

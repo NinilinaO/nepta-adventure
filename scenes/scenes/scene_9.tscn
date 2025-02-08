@@ -1,0 +1,238 @@
+[gd_scene load_steps=32 format=3 uid="uid://ci37fyf3sa6xo"]
+
+[ext_resource type="Script" path="res://scripts/scenes/scene_9.gd" id="1_pgcej"]
+[ext_resource type="TileSet" uid="uid://cskc25vgsk8of" path="res://tileset/scene_1.tres" id="1_sl2lp"]
+[ext_resource type="PackedScene" uid="uid://o004qv4ppgdh" path="res://dialogues/character_scene/Abby.tscn" id="2_wk3cj"]
+[ext_resource type="PackedScene" uid="uid://sbmrem55ogmf" path="res://scenes/det/cosmosik_bg.tscn" id="2_xkt8k"]
+[ext_resource type="PackedScene" uid="uid://d2dveldbar2k6" path="res://player/player.tscn" id="3_mc22u"]
+[ext_resource type="Texture2D" uid="uid://cjdxe72jb3c4f" path="res://art/portal/portal.png" id="5_47uot"]
+[ext_resource type="Script" path="res://scenes/card/card_12.gd" id="5_p5sia"]
+[ext_resource type="Texture2D" uid="uid://c2qvh5m286kyl" path="res://art/inventory/card.png" id="6_7mu7k"]
+[ext_resource type="Texture2D" uid="uid://ch2dn5d73vt0g" path="res://art/portal/portal_2.png" id="6_lu3g0"]
+[ext_resource type="PackedScene" uid="uid://c5ciil2026wet" path="res://scenes/pause_menu/pause_menu.tscn" id="7_864ff"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_25knw"]
+radius = 23.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irnfv"]
+size = Vector2(19, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfu0t"]
+atlas = ExtResource("5_47uot")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqoys"]
+atlas = ExtResource("5_47uot")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq1gn"]
+atlas = ExtResource("5_47uot")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re5du"]
+atlas = ExtResource("5_47uot")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1bhd"]
+atlas = ExtResource("5_47uot")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qw3"]
+atlas = ExtResource("5_47uot")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do7ay"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uy1w"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msloa"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nasxu"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dncod"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptcxy"]
+atlas = ExtResource("6_lu3g0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weuf1"]
+atlas = ExtResource("5_47uot")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h0nf"]
+atlas = ExtResource("5_47uot")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox03b"]
+atlas = ExtResource("5_47uot")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65aj5"]
+atlas = ExtResource("5_47uot")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s7q1"]
+atlas = ExtResource("5_47uot")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx8rl"]
+atlas = ExtResource("5_47uot")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcyyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfu0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqoys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq1gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re5du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1bhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0qw3")
+}],
+"loop": true,
+"name": &"anf_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do7ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uy1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msloa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nasxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dncod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptcxy")
+}],
+"loop": true,
+"name": &"anf_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weuf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h0nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox03b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65aj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s7q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx8rl")
+}],
+"loop": true,
+"name": &"prof",
+"speed": 5.0
+}]
+
+[node name="scene_9" type="Node2D"]
+script = ExtResource("1_pgcej")
+
+[node name="Abby" parent="." instance=ExtResource("2_wk3cj")]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(417, -252)
+tile_set = ExtResource("1_sl2lp")
+format = 2
+layer_0/tile_data = PackedInt32Array(262143, 2, 3, 196607, 2, 3, 131071, 2, 3, 65535, 2, 3, -1, 2, 3, -65537, 2, 3, -131073, 2, 3, -196609, 2, 3, -262145, 2, 3, -262146, 2, 3, -196608, 2, 3, -196607, 2, 3, -196606, 2, 3, -131070, 2, 3, -65534, 2, 3, 2, 2, 3, 65538, 2, 3, 131074, 2, 3, 131072, 2, 3, 131073, 2, 3, 327679, 2, 3, -196605, 2, 1, -131069, 2, 1, -65533, 2, 1, 3, 2, 1, 65539, 2, 1, 131075, 2, 1, -65536, 2, 1, 0, 2, 1, -327680, 2, 1, 262144, 2, 1, 196611, 2, 2, -262141, 2, 0, -393216, 2, 0, 196609, 1, 4, 196610, 1, 4, -196610, 0, 2, 393215, 1, 4, -131074, 1, 1, -65538, 1, 1, -2, 1, 1, 65534, 1, 1, 131070, 1, 1, 196606, 1, 1, 262142, 1, 1, 327678, 1, 1, -65535, 1, 1, 1, 1, 1, -262147, 1, 1, 327680, 2, 2, 393214, 1, 2, -196611, 1, 2, -327683, 1, 0, -327682, 1, 3, -327681, 1, 3, -262143, 1, 3, -262142, 1, 3, -131072, 0, 0, 196608, 0, 0, -262144, 0, 1, 65537, 0, 3, 65536, 0, 1, -131071, 0, 2)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_xkt8k")]
+scroll_offset = Vector2(223.87, 906.896)
+
+[node name="card_6" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(845, -97)
+script = ExtResource("5_p5sia")
+
+[node name="Sprite2D" type="Sprite2D" parent="card_6"]
+position = Vector2(-353, -228)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_7mu7k")
+
+[node name="chatDetection" type="Area2D" parent="card_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="card_6/chatDetection"]
+position = Vector2(-352, -228)
+shape = SubResource("CircleShape2D_25knw")
+
+[node name="player" parent="." instance=ExtResource("3_mc22u")]
+position = Vector2(399, -134)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
+limit_left = 100
+limit_top = -550
+limit_right = 800
+limit_bottom = 25
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="9_10" type="Area2D" parent="."]
+position = Vector2(361, -397)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9_10"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_irnfv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="9_10"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_hcyyt")
+animation = &"anf_right"
+autoplay = "anf_right"
+
+[node name="9_7" type="Area2D" parent="."]
+position = Vector2(401, -89)
+scale = Vector2(0.9, 0.9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9_7"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_irnfv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="9_7"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_hcyyt")
+animation = &"prof"
+autoplay = "prof"
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_864ff")]
+
+[connection signal="body_entered" from="card_6/chatDetection" to="card_6" method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="card_6/chatDetection" to="card_6" method="_on_chat_detection_body_exited"]
+[connection signal="body_entered" from="9_10" to="." method="_on__10_body_entered"]
+[connection signal="body_entered" from="9_7" to="." method="_on__7_body_entered"]

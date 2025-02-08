@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0v2aqdx1k3mg"]
+
+[ext_resource type="AudioStream" uid="uid://dqds1bvhohaj4" path="res://sound/Liboti-Berr-nepta_test_.mp3" id="1_pvilc"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_pvilc")
+autoplay = true
+bus = &"Menu"

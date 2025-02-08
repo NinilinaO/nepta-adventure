@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhlqipgcmatvs"]
+
+[ext_resource type="Texture2D" uid="uid://cxwa5kuit6ps4" path="res://art/inventory/врем/53.png" id="1_4s1ma"]
+
+[node name="slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(75, 105)
+offset_right = 63.0
+offset_bottom = 95.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-22, -32)
+scale = Vector2(0.13375, 0.2)
+texture = ExtResource("1_4s1ma")
+centered = false

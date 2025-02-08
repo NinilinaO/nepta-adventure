@@ -1,0 +1,45 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.sigrid} == 0:
+		[signal arg="timeline_start"]
+		join Sigrid (interest) center
+		Sigrid (interest): Здравствуй, Непта. Что привело тебя ко мне?
+		Nepta: Здравствуйте, я ищу карты. У вас их случайно нет?
+		Sigrid (interest): Есть парочка.
+		Nepta: Можете ее отдать, пожалуйста?
+		Sigrid (happy): Только если ты поможешь мне с одной вещью.
+		Nepta: С какой?
+		Sigrid (sad): Мне надо собрать маленькие звездочки с моей планетки. Я нашла некоторые из них, но остальные будто сквозь землю провалилсь.
+		label zadan
+		Sigrid (sad): Я думаю, тебе удасться найти остальные 5 звезд. Поможешь?
+		- Согласиться.
+			Nepta: Да, я помогу Вам.
+			Sigrid (interest): Ох, прекрасно. Удачи тебе! И еще раз спасибо за помощь.
+			set {dialogue.sigrid} = 0.2
+			[signal arg="platf"]
+		- Помочь потом.
+			Nepta: Простите, я сейчас не смогу помочь.
+			Sigrid (happy): Как скажешь. Я все равно буду ждать здесь, если ты вдруг передумаешь.
+			set {dialogue.sigrid} = 0.1
+		[signal arg="timeline_end"]
+	elif {dialogue.sigrid} == 0.1:
+		[signal arg="timeline_start"]
+		join Sigrid (sad) center
+		jump zadan
+	elif {dialogue.sigrid} == 0.2:
+		[signal arg="timeline_start"]
+		join Sigrid (happy) center
+		Nepta: Ваши звёздочки.
+		Sigrid (happy): Огромное спасибо, Непта! Вот твои карты.
+		set {count_card} += 2
+		set {dialogue.sigrid} = -1
+		[signal arg="card_22_23"]
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Sigrid (happy) center
+	Sigrid: Давно не виделись, Непта!
+	Sigrid (think): Может быть мне мерещится, но ты как будто бы стала меньше с последней нашей встречи.
+	Nepta: Здравствуйте! Не думаю. Я не замечала за собой подобных изменений.
+	Sigrid (interest): Ну, как скажешь. Удачи тебе, чем бы ты сейчас не занималась.
+	Nepta: Спасибо, вам тоже.
+	[signal arg="timeline_end"]

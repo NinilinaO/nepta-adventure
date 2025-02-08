@@ -1,0 +1,23 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.abby} == 0:
+		[signal arg="timeline_start"]
+		join Abby (interest) center
+		Abby (interest): Привет, Непта!
+		Nepta: Привет. У тебя случайно нет карт?
+		Abby (confused): Были, но их забрал Отис. Собственно, я не была сильно против, зачем они мне? Теперь карты у него.
+		if {dialogue.otis} == 0:
+			Nepta: Я уже была у него. Всё равно спасибо за помощь!
+			Abby (think): Не за что, удачки тебе!
+			[signal arg="timeline_end"]
+		elif {dialogue.otis} != 0:
+			Nepta: Спасибо за помощь!
+			Abby (think): Не за что, удачки тебе!
+			[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Abby (think) center
+	Abby: Как мне повезло встретить тебя сейчас! Мне нужно...
+	Nepta: Прости, но не сейчас.
+	Abby (confused): Вот как?
+	Abby (confused): Хорошо, тогда я найду тебя позже.
+	[signal arg="timeline_end"]

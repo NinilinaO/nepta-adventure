@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck8ern56gmqi3"]
+
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_ms2ti"]
+[ext_resource type="Script" path="res://npc/mari.gd" id="1_rcd2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5iuo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji50v"]
+radius = 75.6637
+
+[node name="Mari" type="StaticBody2D"]
+position = Vector2(-80, -383)
+script = ExtResource("1_rcd2t")
+
+[node name="stars_1" parent="." instance=ExtResource("1_ms2ti")]
+rotation = -0.228482
+scale = Vector2(0.8, 0.8)
+animation = &"blue"
+autoplay = "blue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g5iuo")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_ji50v")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

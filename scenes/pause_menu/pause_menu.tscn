@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5ciil2026wet"]
+
+[ext_resource type="Theme" uid="uid://ciop2xbybmoep" path="res://art/button/button_Menu.tres" id="1_5c5c1"]
+[ext_resource type="Script" path="res://scenes/pause_menu/PauseMenu.gd" id="1_qfcf8"]
+[ext_resource type="Shader" path="res://scenes/pause_menu/pause_menu.gdshader" id="2_1opgo"]
+[ext_resource type="FontFile" uid="uid://b51nayr5xj4uc" path="res://fonts/v_Digital_Strip.ttf" id="2_ibt4t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fyc8f"]
+shader = ExtResource("2_1opgo")
+shader_parameter/amount = 1.5
+
+[node name="PauseMenu" type="CanvasLayer"]
+visible = false
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qfcf8")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+material = SubResource("ShaderMaterial_fyc8f")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -591.0
+offset_top = -339.0
+offset_right = 587.0
+offset_bottom = 331.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -50.0
+offset_right = 103.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5c5c1")
+theme_override_fonts/font = ExtResource("2_ibt4t")
+theme_override_font_sizes/font_size = 30
+text = "продолжить"
+
+[node name="quit" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5c5c1")
+theme_override_fonts/font = ExtResource("2_ibt4t")
+theme_override_font_sizes/font_size = 30
+text = "выйти"
+
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/quit" to="PauseMenu" method="_on_quit_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://o004qv4ppgdh"]
+
+[ext_resource type="Script" path="res://npc/abby.gd" id="1_1jcnt"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_k2jit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0loqf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8gnk"]
+radius = 75.6637
+
+[node name="Abby" type="StaticBody2D"]
+position = Vector2(452, -227)
+script = ExtResource("1_1jcnt")
+
+[node name="stars_1" parent="." instance=ExtResource("1_k2jit")]
+rotation = -0.0131856
+scale = Vector2(0.8, 0.8)
+animation = &"red"
+autoplay = "red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0loqf")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_w8gnk")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

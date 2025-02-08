@@ -1,0 +1,31 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.kori} == 0:
+		[signal arg="timeline_start"]
+		join Kori (happy) center
+		Kori (happy): О, привет, Непта. Ты поняла, что это было?
+		Nepta: Нет, прости.
+		Nepta: Я тут по одному вопросу.
+		Kori (interest): Слушаю.
+		Nepta: У тебя случайно нет карт?
+		Kori (interest): Есть... Она тебе нужна?
+		Nepta: Да, было бы хорошо, если бы ты их вернул.
+		Kori (happy): Окей, держи.
+		[signal arg="card_17"]
+		set {count_card} += 1
+		set {dialogue.kori} = 0.1
+		[signal arg="timeline_end"]
+	elif {dialogue.kori} == 0.1:
+		[signal arg="timeline_start"]
+		join Kori (interest) center
+		Kori (interest): Привет, что-то хотела?
+		Nepta: Нет, я пойду.
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Kori (sad) center
+	Nepta: Привет! Я только недавно сюда вернулась.
+	Nepta: Можешь подсказать, что здесь произошло, пока меня не было?
+	Kori (think): Привет. Нет, не могу. Я и сам не так часто вижусь с соседями.
+	Nepta: Хорошо. Всё равно большое тебе спасибо! Мне пора идти.
+	Kori (sad): ...
+	[signal arg="timeline_end"]

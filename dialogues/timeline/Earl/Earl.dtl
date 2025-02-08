@@ -1,0 +1,21 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.earl} == 0:
+		[signal arg="timeline_start"]
+		join Earl (interest) center
+		Earl (interest): Привет, Непта!
+		Nepta: Тебе тоже привет! Не видел тёмно-синих карт?
+		Earl (think): Хм... Не помню. Возможно, что-то похожее было у Люиса.
+		Nepta: О, спасибо тебе!
+		Earl (interest): Не за что, обращайся.
+		set {dialogue.earl} = 1
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Earl (interest) center
+	Earl (interest): Привет. Тебя не было видно достаточно длинный промежуток времени.
+	Earl (think): Не похоже, чтобы кто-то сильно переживал, но твое отсутствие здесь чувствуется.
+	Earl (interest): Снова увлеклась своими идеями и мимолетными знакомствами?
+	Nepta: Может быть.
+	Nepta: Я снова здесь, и я пока не планирую уходить. Этого достаточно, ведь так?
+	Earl (happy): Как скажешь.
+	[signal arg="timeline_end"]

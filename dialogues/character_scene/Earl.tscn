@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw0rshldggl6a"]
+
+[ext_resource type="Script" path="res://npc/earl.gd" id="1_0pal1"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_d08wx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro4lq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nml7t"]
+radius = 75.6637
+
+[node name="Earl" type="StaticBody2D"]
+position = Vector2(270, -282)
+script = ExtResource("1_0pal1")
+
+[node name="stars_1" parent="." instance=ExtResource("1_d08wx")]
+rotation = 0.108888
+scale = Vector2(0.8, 0.8)
+animation = &"yellow"
+autoplay = "yellow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ro4lq")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_nml7t")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

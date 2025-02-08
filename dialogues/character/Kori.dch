@@ -1,0 +1,74 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.679688, 0.969971, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "2"
+},
+"default_portrait": "think",
+"description": "3_1",
+"display_name": "Кори",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"angry": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"confused": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"interest": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_interest.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"think": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/3_1/Kori_think.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.98,
+"scene": ""
+}
+},
+"scale": 1.0
+}

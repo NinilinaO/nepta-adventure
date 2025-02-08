@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3tqbuq8o1bbl"]
+
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_6r5b0"]
+[ext_resource type="Script" path="res://npc/kori.gd" id="1_iif2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e08mf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ps3tw"]
+radius = 75.6637
+
+[node name="Kori" type="StaticBody2D"]
+position = Vector2(-509, 125)
+script = ExtResource("1_iif2f")
+
+[node name="stars_1" parent="." instance=ExtResource("1_6r5b0")]
+rotation = -0.207442
+scale = Vector2(0.7, 0.7)
+autoplay = "3_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e08mf")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_ps3tw")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

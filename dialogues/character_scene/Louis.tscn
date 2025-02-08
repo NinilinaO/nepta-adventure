@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0wo04dqugk2r"]
+
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_j0qbl"]
+[ext_resource type="Script" path="res://npc/louis.gd" id="1_lnk5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro4lq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83xgm"]
+radius = 75.6637
+
+[node name="Louis" type="StaticBody2D"]
+position = Vector2(128, -228)
+rotation = 0.163114
+script = ExtResource("1_lnk5g")
+
+[node name="stars_1" parent="." instance=ExtResource("1_j0qbl")]
+rotation = 2.72488
+scale = Vector2(0.9, 0.9)
+animation = &"orange"
+autoplay = "orange"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ro4lq")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_83xgm")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

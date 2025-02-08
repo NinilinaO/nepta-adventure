@@ -1,0 +1,4 @@
+[signal arg="timeline_start"]
+Ого, Вы нашли карту.
+set {count_card} += 1
+[signal arg="timeline_end"]

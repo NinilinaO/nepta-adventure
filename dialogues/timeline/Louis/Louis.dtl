@@ -1,0 +1,24 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.louis} == 0:
+		[signal arg="timeline_start"]
+		join Louis (interest) center
+		Nepta: Привет! У тебя нет случайно тёмно-синих карт?
+		Louis (confused): Одна...
+		Nepta: Можешь отдать?
+		Louis (sad): ...
+		Nepta: ?...
+		Louis (confused): ...Хорошо, держи.
+		Nepta: Что-то не так?
+		Louis (think): Не знаю.
+		Nepta: Если что, то обращайся.
+		Louis (sad): Хорошо...
+		[signal arg="card_12"]
+		set {count_card} += 1
+		set {dialogue.louis} = 0.1
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Louis (interest) center
+	Louis (interest): Привет! Давно не виделись.
+	Nepta: Рада видеть тебя снова!
+	[signal arg="timeline_end"]

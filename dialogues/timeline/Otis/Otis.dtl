@@ -1,0 +1,62 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.otis} == 1:
+		[signal arg="timeline_start"]
+		join Giles (think) center
+		Nepta: Привет! Элсбет сказала, что у тебя были карты.
+		Giles (think): Были. Но теперь их нет, так что оставь меня в покое.
+		Nepta: А можно узнать, куда они делись?
+		Giles: Нет.
+		set {dialogue.otis} += 0.1
+		[signal arg="timeline_end"]
+	elif {dialogue.otis} == 1.1:
+		[signal arg="timeline_start"]
+		join Giles (think) center
+		Nepta: Мне это необходимо. Пожалуйста, скажи, куда делись карты, которые были у тебя.
+		Giles (think): С чего я должен тебе говорить?
+		Nepta: Я могу тебе чем-нибудь помочь.
+		Giles (angry): Себе помоги - перестань общаться с Пепетой.
+		set {dialogue.otis} += 0.1
+		[signal arg="timeline_end"]
+	elif {dialogue.otis} == 1.2:
+		[signal arg="timeline_start"]
+		join Giles (angry) center
+		Giles (angry): Чего тебе?
+		Nepta: Мне действительно важно узнать, куда делись те карты!
+		Giles (think): Хм...
+		Nepta: ?
+		Giles (sad): ...
+		[wait time="5.0" skippable="true"]
+		Giles (angry): Ладно, хорошо.
+		Giles (think): Я отдал её Трине, она зачем-то их собирает.
+		update Giles right [move_time="0.7"]
+		join Elsbeth (sad) left [mirrored="true"]
+		Elsbeth (sad): Вот ей ты значит сразу отдал, а Непте – никак нет?
+		Giles (interest): !
+		Giles (angry): Не вмешивайся в чужой диалог!
+		Elsbeth (angry): Что хочу, то и делаю. Не тебе мне приказывать!
+		set {dialogue.elsbeth} = -0.1
+		set {dialogue.otis} = -0.1
+		set {count_card} += 1
+		[signal arg="card_19"]
+		[signal arg="timeline_end"]
+	elif {dialogue.otis} == 0:
+		[signal arg="timeline_start"]
+		join Giles (think) center
+		Giles (think): Чего тебе?
+		Nepta: Ты не видел тёмно-синих карт?
+		Giles (angry): Нет, не видел. Если это всё, то уходи.
+		Nepta: ...
+		set {dialogue.elsbeth} = 1
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Giles (think) center
+	Giles (think): Ну что, нашла своё "предназначение", скитаясь по округе?
+	Giles (angry): Не думаешь, что тебе стоит прекратить заниматься такой чепухой и наконец найти себе стабильное место для существования?
+	Nepta: Конечно, как скажете.
+	Giles (angry): ...
+	[wait time="2.0"]
+	Giles (confused): Что за реакция? Не воспринимай мои слова настолько серьёзно!
+	Giles (sad): Молодёжь в наше время...
+	Giles (think): Ладно, иди куда шла.
+	[signal arg="timeline_end"]

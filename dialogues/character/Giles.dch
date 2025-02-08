@@ -1,0 +1,74 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.490635, 0.385117, 0.699219, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "2"
+},
+"default_portrait": "think",
+"description": "7_2",
+"display_name": "Отис",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"angry": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"confused": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"interest": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_interest.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"think": {
+"export_overrides": {
+"image": "\"res://dialogues/sprite/7_2/Giles_think.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

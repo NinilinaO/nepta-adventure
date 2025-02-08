@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://baookqg7m0thr"]
+
+[ext_resource type="Script" path="res://npc/elsbeth.gd" id="1_e2qt8"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="2_7b5vn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqmp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26sou"]
+radius = 75.6637
+
+[node name="Elsbeth" type="StaticBody2D"]
+position = Vector2(281, 64)
+rotation = 3.14159
+script = ExtResource("1_e2qt8")
+
+[node name="stars_1" parent="." instance=ExtResource("2_7b5vn")]
+position = Vector2(-12, -3)
+rotation = -1.44125
+animation = &"pink"
+autoplay = "pink"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pvqmp")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_26sou")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

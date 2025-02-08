@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bamwvog84ruok"]
+
+[ext_resource type="Script" path="res://scenes/end/end.gd" id="1_sneuc"]
+[ext_resource type="Texture2D" uid="uid://bv4j0eng0i2nu" path="res://art/end/end.png" id="2_2pbh2"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="3_yit00"]
+[ext_resource type="Theme" uid="uid://ciop2xbybmoep" path="res://art/button/button_Menu.tres" id="4_q76ob"]
+[ext_resource type="FontFile" uid="uid://b51nayr5xj4uc" path="res://fonts/v_Digital_Strip.ttf" id="5_010pr"]
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_sneuc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+texture = ExtResource("2_2pbh2")
+
+[node name="stars_1" parent="." instance=ExtResource("3_yit00")]
+position = Vector2(241, 282)
+rotation = 0.166146
+scale = Vector2(1.18204, 1.18204)
+animation = &"blue"
+autoplay = "blue"
+
+[node name="stars_2" parent="." instance=ExtResource("3_yit00")]
+position = Vector2(128, 577)
+rotation = 0.625193
+scale = Vector2(0.896424, 0.896424)
+animation = &"orange"
+autoplay = "orange"
+
+[node name="stars_3" parent="." instance=ExtResource("3_yit00")]
+position = Vector2(122, 160)
+rotation = -0.213342
+animation = &"red"
+autoplay = "red"
+
+[node name="stars_4" parent="." instance=ExtResource("3_yit00")]
+position = Vector2(281, 464)
+rotation = -0.323546
+scale = Vector2(0.974282, 0.974282)
+animation = &"purple"
+autoplay = "purple"
+
+[node name="stars_5" parent="." instance=ExtResource("3_yit00")]
+position = Vector2(111, 393)
+rotation = -0.545855
+scale = Vector2(1.04412, 1.04412)
+animation = &"pink"
+autoplay = "pink"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 470.0
+offset_top = 511.0
+offset_right = 650.0
+offset_bottom = 578.0
+theme = ExtResource("4_q76ob")
+theme_override_fonts/font = ExtResource("5_010pr")
+theme_override_font_sizes/font_size = 30
+text = "выйти"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

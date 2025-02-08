@@ -1,0 +1,204 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Nepta Adventure"
+run/main_scene="res://scenes/menu/menu.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.0372306, 0.0736947, 0.17409, 1)
+boot_splash/image="res://art/bg_Menu/1.png"
+config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Nepta1="*res://music/nepta1.tscn"
+
+[dialogic]
+
+directories/dch_directory={
+"Abby": "res://dialogues/character/Abby.dch",
+"Earl": "res://dialogues/character/Earl.dch",
+"Elsbeth": "res://dialogues/character/Elsbeth.dch",
+"Farley": "res://dialogues/character/Farley.dch",
+"Giles": "res://dialogues/character/Giles.dch",
+"Kayla": "res://dialogues/character/Kayla.dch",
+"Kori": "res://dialogues/character/Kori.dch",
+"Louis": "res://dialogues/character/Louis.dch",
+"Mari": "res://dialogues/character/Mari.dch",
+"Mid": "res://dialogues/character/Mid.dch",
+"Nepta": "res://dialogues/character/Nepta.dch",
+"Sigrid": "res://dialogues/character/Sigrid.dch",
+"Trina": "res://dialogues/character/Trina.dch",
+"Wilf": "res://dialogues/character/Wilf.dch",
+"pepeta": "res://dialogues/character/pepeta.dch"
+}
+directories/dtl_directory={
+"Abby": "res://dialogues/timeline/Abby/Abby.dtl",
+"Earl": "res://dialogues/timeline/Earl/Earl.dtl",
+"Elsbeth": "res://dialogues/timeline/Elsbeth/Elsbeth.dtl",
+"Farley": "res://dialogues/timeline/Farley/Farley.dtl",
+"Kayla": "res://dialogues/timeline/Kayla/Kayla.dtl",
+"Kori": "res://dialogues/timeline/Kori/Kori.dtl",
+"Louis": "res://dialogues/timeline/Louis/Louis.dtl",
+"Mari": "res://dialogues/timeline/Mari/Mari.dtl",
+"Mid": "res://dialogues/timeline/Mid/Mid.dtl",
+"Otis": "res://dialogues/timeline/Otis/Otis.dtl",
+"Pepeta": "res://dialogues/timeline/Pepeta/Pepeta.dtl",
+"Sigrid": "res://dialogues/timeline/Sigrid/Sigrid.dtl",
+"Trina": "res://dialogues/timeline/Trina/Trina.dtl",
+"Wilf": "res://dialogues/timeline/Wilf/Wilf.dtl",
+"non": "res://dialogues/timeline/non.dtl"
+}
+glossary/default_case_sensitive=true
+layout/style_list=["res://dialogues/style/2.tres", "res://dialogues/style/Nepta.tres"]
+layout/default_style=""
+variables={
+"answer": {
+"galax": "лол"
+},
+"count_card": 0,
+"dialogue": {
+"abby": 0,
+"cut_scene": false,
+"earl": 0,
+"elsbeth": 0,
+"farley": 0,
+"kayla": 0,
+"kori": 0,
+"louis": 0,
+"mari": 0,
+"mid": 0,
+"otis": 0,
+"pepeta": 0,
+"sigrid": 0,
+"trina": 0,
+"wilf": 0
+}
+}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.03
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.2
+choices/autofocus_first=false
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+text/autocolor_names=false
+animations/join_default="Slide In Left"
+
+[dialogue_manager]
+
+general/states=["State", "Global"]
+general/custom_test_scene_path="res://scenes/scenes/test_dialogue.tscn"
+general/balloon_path="res://dialogues_old/balloon.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[input]
+
+run_up={
+"deadzone": 0.5,
+"events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+run_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+run_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+run_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":1094,"location":0,"echo":false,"script":null)
+]
+}
+next={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":1091,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(177, 15),"global_position":Vector2(186, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":1095,"location":0,"echo":false,"script":null)
+]
+}
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+e={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+inventory={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/карты.dialogue", "res://dialogues/test.dialogue", "res://dialogues/pepeta.dialogue", "res://dialogues/stars_intro.dialogue")
+
+[layer_names]
+
+2d_physics/layer_7="actions"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/decals/filter=0
+textures/light_projectors/filter=0
+environment/defaults/default_clear_color=Color(0.0941176, 0.176471, 0.2, 0.603922)
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

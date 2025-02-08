@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bspy6yehyjxjq"]
+
+[ext_resource type="Script" path="res://npc/sigrid.gd" id="1_v6hbt"]
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_w5al0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e08mf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yn747"]
+radius = 75.6637
+
+[node name="Sigrid" type="StaticBody2D"]
+position = Vector2(-277, 73.9999)
+script = ExtResource("1_v6hbt")
+
+[node name="stars_1" parent="." instance=ExtResource("1_w5al0")]
+rotation = 0.0742381
+scale = Vector2(0.9, 0.9)
+animation = &"purple"
+autoplay = "purple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e08mf")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_yn747")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

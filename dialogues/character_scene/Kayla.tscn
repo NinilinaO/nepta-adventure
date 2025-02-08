@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7460tcwusu6o"]
+
+[ext_resource type="PackedScene" uid="uid://b7hvulwqhe3ej" path="res://art/star_on_scene/stars_1.tscn" id="1_eo1vm"]
+[ext_resource type="Script" path="res://npc/kayla.gd" id="1_y2ixj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4kr5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bis0r"]
+radius = 75.6637
+
+[node name="Kayla" type="StaticBody2D"]
+position = Vector2(-174, 88.9999)
+script = ExtResource("1_y2ixj")
+
+[node name="stars_1" parent="." instance=ExtResource("1_eo1vm")]
+rotation = 0.0818042
+scale = Vector2(0.7, 0.7)
+animation = &"pink"
+autoplay = "pink"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j4kr5")
+
+[node name="chatDetection" type="Area2D" parent="."]
+rotation = 0.0818042
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_bis0r")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

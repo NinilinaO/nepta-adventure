@@ -1,0 +1,52 @@
+if {dialogue.cut_scene} == true:
+	if {dialogue.elsbeth} == 0:
+		[signal arg="timeline_start"]
+		join Elsbeth (happy) center
+		Elsbeth (happy): О, привет, Непта. Решила со мной поговорить?
+		Nepta: Да, тебе тоже привет. У тебя случайно нет тёмно-синих карт с рисунками?
+		Elsbeth (interest): У меня нет, но у Отиса были. Не знаю, что он с ними сделал, но их у него больше нет.
+		set {dialogue.otis} = 1
+		Elsbeth: Тебе стоит спросить у него. Вдруг ты еще сможешь их забрать.
+		[wait time="3.0" skippable="true"]
+		Elsbeth (confused): И... Непта, заглядывай почаще.
+		Nepta: Я постараюсь, спасибо за помощь!
+		[signal arg="timeline_end"]
+	elif {dialogue.elsbeth} == 1:
+		[signal arg="timeline_start"]
+		join Elsbeth (happy) center
+		Elsbeth (happy): О, привет, Непта. Решила со мной поговорить?
+		Nepta: Да, тебе тоже привет. У тебя случайно нет темно-синих карт с рисунками?
+		Elsbeth (think): У меня нет, но у Отиса были. Не знаю, что он с ними сделал, но их у него больше нет.
+		Elsbeth: Тебе стоит спросить у него. Вдруг ты еще сможешь их забрать.
+		Nepta: Я уже подходила к нему, он сказал, что карт не видел...
+		Elsbeth: ...
+		Elsbeth (interest): Отис, подойди сюда!
+		update Elsbeth right [move_time="0.7"]
+		join Giles (angry) left [mirrored="true"]
+		Giles (angry): Что на этот раз?
+		Elsbeth: Почему ты не отдал Непту её карты?!
+		Giles (confused): Какие карты?
+		Nepta: Тёмно-синие, с рисуночками. Я у тебя спрашивала насчёт них.
+		Giles (think): Я уже говорил, что я их не видел.
+		Elsbeth (angry): Я видела, что они у тебя были. Куда ты их дел?
+		Giles: ...
+		Giles (sad): Не было у меня карт...
+		Elsbeth (sad): Отис, не ври.
+		[wait time="4.0" skippable="true"]
+		Giles (angry): Я отдал их Трине, потому что они зачем-то ей были нужны. Откуда мне было знать, что это карты Непты?
+		Elsbeth (angry): Так бы сразу и сказал!
+		Elsbeth (confused): Надеюсь, это тебе помогло, Непта. Можешь идти.
+		Nepta: Спасибо за помощь!
+		set {dialogue.elsbeth} = -0.1
+		set {dialogue.otis} = -0.1
+		[signal arg="timeline_end"]
+else:
+	[signal arg="timeline_start"]
+	join Elsbeth (sad) center
+	Elsbeth (sad): Привет! Обычно я вижу тебя в округе куда чаще. Ты меня избегала?
+	Elsbeth (confused): Не пойми неправильно, я рада что ты начала со мной диалог и всё такое!!
+	Nepta: Нет, я не избегала тебя намеренно. Я покидала Туманность для поиска знаний.
+	Elsbeth (happy): О! Вот как!
+	Elsbeth: Тогда ты не против будешь провести со мной время???
+	Nepta: Нет, прости. Мне пора идти.
+	[signal arg="timeline_end"]
